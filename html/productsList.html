@@ -7,12 +7,15 @@
     <title>Product List</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/productsList.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="../js/jquery.searcher.js"></script>
+    <script type="text/javascript" src="../js/productData.js"></script>
     <script type="text/javascript" src="../js/productsList.js"></script>
   </head>
   <body>
@@ -23,160 +26,17 @@
         <li title="products"><a>Products</a></li>
       </ul>
     </div>
-    <div class="card-container">
-      <div class="card" id="1">
-        <div class="card-image">
-          <img id="product-image-1" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-1"></h3>
-          <div class="card-footer">
-            <div id="product-rating-1"></div>
-            <h2 id="product-price-1"></h2>
-            <p id="product-availavle-1"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="2">
-        <div class="card-image">
-          <img id="product-image-2" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-2"></h3>
-          <div class="card-footer">
-            <div id="product-rating-2"></div>
-            <h2 id="product-price-2"></h2>
-            <p id="product-availavle-2"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="3">
-        <div class="card-image">
-          <img id="product-image-3" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-3"></h3>
-          <div class="card-footer">
-            <div id="product-rating-3"></div>
-            <h2 id="product-price-3"></h2>
-            <p id="product-availavle-3"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="4">
-        <div class="card-image">
-          <img id="product-image-4" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-4"></h3>
-          <div class="card-footer">
-            <div id="product-rating-4"></div>
-            <h2 id="product-price-4"></h2>
-            <p id="product-availavle-4"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="5">
-        <div class="card-image">
-          <img id="product-image-5" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-5"></h3>
-          <div class="card-footer">
-            <div id="product-rating-5"></div>
-            <h2 id="product-price-5"></h2>
-            <p id="product-availavle-5"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="6">
-        <div class="card-image">
-          <img id="product-image-6" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-6"></h3>
-          <div class="card-footer">
-            <div id="product-rating-6"></div>
-            <h2 id="product-price-6"></h2>
-            <p id="product-availavle-6"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="7">
-        <div class="card-image">
-          <img id="product-image-7" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-7"></h3>
-          <div class="card-footer" class="card-footer">
-            <div id="product-rating-7"></div>
-            <h2 id="product-price-7"></h2>
-            <p id="product-availavle-7"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="8">
-        <div class="card-image">
-          <img id="product-image-8" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-8"></h3>
-          <div class="card-footer">
-            <div id="product-rating-8"></div>
-            <h2 id="product-price-8"></h2>
-            <p id="product-availavle-8"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="9">
-        <div class="card-image">
-          <img id="product-image-9" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-9"></h3>
-          <div class="card-footer">
-            <div id="product-rating-9"></div>
-            <h2 id="product-price-9"></h2>
-            <p id="product-availavle-9"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="10">
-        <div class="card-image">
-          <img id="product-image-10" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-10"></h3>
-          <div class="card-footer">
-            <div id="product-rating-10"></div>
-            <h2 id="product-price-10"></h2>
-            <p id="product-availavle-10"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="11">
-        <div class="card-image">
-          <img id="product-image-11" />
-        </div>
-        <div class="card-content">
-          <h3 id="product-title-11"></h3>
-          <div class="card-footer">
-            <div id="product-rating-11"></div>
-            <h2 id="product-price-11"></h2>
-            <p id="product-availavle-11"></p>
-          </div>
-        </div>
-      </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search" id="search-text">
+      <select id="selector">
+        <option value="ALL_PRODUCTS">All Products</option>
+        <option value="BATTERY">Battery</option>
+        <option value="BRAKES">Brakes</option>TIRES
+        <option value="HEADLIGHT">HeadLights & LED</option>
+        <option value="TIRES">Tires</option>"
+        <option value="WHEELS">Wheels</option>"
+      </select>
     </div>
+    <div class="card-container" id="card-container"></div>
   </body>
 </html>

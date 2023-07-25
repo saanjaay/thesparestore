@@ -7,12 +7,15 @@
     <title>Product Details</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/productDetails.css" />
+    <link rel="stylesheet" href="../css/productsList.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script src="../js/jquery.searcher.js"></script>
+    <script type="text/javascript" src="../js/productData.js"></script>
     <script type="text/javascript" src="../js/productsList.js"></script>
     <script type="text/javascript" src="../js/productDetails.js"></script>
   </head>
@@ -21,13 +24,10 @@
       <img src="../media/logo.svg" />
       <ul>
         <li title="user registration"><a>Register</a></li>
-        <li title="products"><a>Products</a></li>
+        <li title="products"><a href="productsList.html">Products</a></li>
       </ul>
     </div>
     <div class="container">
-      <div class="btn-container">
-        <button class="btn" onclick="goToProductList()"><- All products</button>
-      </div>
       <div class="product-container">
         <div class="img-container">
           <img class="img" id="product-image" />
@@ -42,6 +42,11 @@
           <p class="desc" id="product-descriptino">Description:</p>
           <ul id="product-desc"></ul>
           <h2 class="price" id="product-price">Price</h2>
+          <div class="quantity-container"> 
+            <p id="product-count"></p>
+            <span>-</span>
+            <p id="product-available"></p> 
+          </div>
           <p class="warranty" id="product-warranty">warranty info</p>
         </div>
       </div>

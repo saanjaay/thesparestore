@@ -39,3 +39,39 @@
 .card-footer {
   margin-top: auto;
 }
+
+/* Search Container */
+.search-container {
+  margin: 15px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.search-container input {
+  margin-right: 10px;
+  width: 13%;
+  font-size: 15px;
+}
+
+.search-container select {
+  font-size: 15px;
+}
+
+.search-container > select > option {
+  font-size: 15px;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-container span {
+  margin: 0 5px;
+}
+
+.rating-container{
+  display: flex;
+  align-items: center;
+}
