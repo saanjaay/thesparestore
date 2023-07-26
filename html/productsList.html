@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=`, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" `, initial-scale="1.0" />
     <title>Product List</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/productsList.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="../js/jquery.searcher.js"></script>
+    <script type="text/javascript" src="../js/productData.js"></script>
+    <script type="text/javascript" src="../js/productsList.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <img src="../media/logo.svg" />
+      <ul>
+        <li title="user registration"><a>Register</a></li>
+        <li title="products"><a>Products</a></li>
+      </ul>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search" id="search-text">
+      <select id="selector">
+        <option value="ALL_PRODUCTS">All Products</option>
+        <option value="BATTERY">Battery</option>
+        <option value="BRAKES">Brakes</option>TIRES
+        <option value="HEADLIGHT">HeadLights & LED</option>
+        <option value="TIRES">Tires</option>"
+        <option value="WHEELS">Wheels</option>"
+      </select>
+    </div>
+    <div class="card-container" id="card-container"></div>
+  </body>
 </html>
