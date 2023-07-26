@@ -1,5 +1,4 @@
 <?php
-    
     //extracting the data from the html forms
     if(isset($_POST['submit']))
     {
@@ -16,13 +15,13 @@
     // database details
     $host = 'localhost';
     $username = "root";
-    $password = "";
+    $pass = "";
     $dbname = "customer_details";
     
     // creating a connection
-    $con = mysqli_connect($host, $username, $password, $dbname);
+    $con = mysqli_connect($host, $username, $pass, $dbname);
 
-    // to ensure that the connection is made
+    // checking connection
     if (!$con)
     {
         die("Connection failed!" . mysqli_connect_error());
@@ -37,9 +36,10 @@
 
     if($rs)
     {
-        echo "Entries added!";
+        //clsoing the database connection
+        mysqli_close($con);
+        header("Location: userLogin.html");
+        exit();
     }
-  
-    // close connection
-    mysqli_close($con);
+    
 ?>
