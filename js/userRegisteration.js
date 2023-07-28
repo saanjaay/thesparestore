@@ -1,25 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     document.getElementById("user-form").addEventListener("submit", function(event) {
-//         event.preventDefault(); 
-//         if (password !== repeatPassword) {
-//             alert("Passwords do not match. Please re-enter your passwords.");
-//             return;
-//         }
-
-//         var firstName = document.getElementById("firstname").value;
-//         var lastName = document.getElementById("lastname").value;
-//         var email = document.getElementById("email").value;
-//         var dob = document.getElementById("dob").value;
-//         var phone = document.getElementById("phone").value;
-//         var address = document.getElementById("address").value;
-//         var pin = document.getElementById("pin").value;
-//         var password = document.getElementById("password").value;
-
-
-
-//     });
-// });
-
 $(document).ready(function(){
     // valiadtion for Password
 $('#password').on('input', function () {

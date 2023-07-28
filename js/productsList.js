@@ -38,9 +38,7 @@ function renderCards(Products) {
       "$" + (product.currentPrice.value || product.currentPrice.minPrice)
     );
     $("#product-count-" + id).text(product.quantity);
-    $("#product-review-count-"+ id).text(
-      "(" + product.ratingsCount + ")"
-    );
+    $("#product-review-count-" + id).text("(" + product.ratingsCount + ")");
     if (product.quantity === 0) {
       $("#product-available-" + id).text("Not Available");
       $("#product-available-" + id).css("color", "red");
@@ -72,7 +70,10 @@ function renderCards(Products) {
   });
 }
 
-$(function () {
+$(document).ready(function () {
+
+  $("#welcome-msg").html("Welcome ")
+
   renderCards(PRODUCTS);
 
   $("#selector").on("change", function (event) {
