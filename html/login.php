@@ -23,16 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare the SQL query to check the username and password
     $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '$password'";
     $result = $conn->query($sql);
+    $row = $result->fetch_array();
     print_r($result->num_rows);
+    $conn->close();
     // Check for successful login
     if ($result->num_rows == 1) {
         // Redirect to product list page
-        $row = $result->fetch_assoc();
-        setcookie("the_space_store_username", $row["firstname"], time() + 3600);
-        header("Location: productsList.html");
+        $username = $row['first_name'];
+        header("Location:./productsList.html?username=$username");
+        exit();
+    }else{
+        header("Location:./userLogin.html?login=invalid");
         exit();
     }
-    // Closing the database connection
-    $conn->close();
 }
 ?>

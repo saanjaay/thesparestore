@@ -1,7 +1,5 @@
 :root {
-    --color1: brown;
-    --color2: black;
-    --color3: blue;
+    --color1: royalblue;
 }
 
 
@@ -67,12 +65,12 @@ body {
   
   .form-label-class {
     display: block;
-    margin-bottom: 0%;
+    margin-bottom: 10px;
     font-weight: bold;
   }
   
   .form-input {
-    width: 100%;
+    width: 96%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -123,9 +121,8 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: royalblue;
-  padding: 5px;
+  padding: 5px 40px;
   font-size: 20px;
-  border-radius: 5px;
 }
 
 .top-bar > img {
@@ -150,4 +147,9 @@ body {
 
 .top-bar > ul > li:hover {
   transform: scale(1.02);
+}
+
+.top-bar > ul > li > a {
+  color: white;
+  text-decoration: none;
 }

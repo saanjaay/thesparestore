@@ -1,4 +1,18 @@
-function renderCards(Products) {
+
+
+function redirectToLogin(){
+  let username = getUrlVars()["username"];
+  if (username === null || username === undefined){
+    location.href = "../html/userLogin.html";
+  }
+  return username;
+}
+
+function logout(){
+  window.location.href = location.href.split("?")[0]
+}
+
+function renderCards(Products, username) {
   $("#card-container").empty();
 
   Products.map((product, i) => {
@@ -56,7 +70,8 @@ function renderCards(Products) {
       "?id=" +
       e.currentTarget.id +
       "&type=" +
-      $("#selector").val();
+      $("#selector").val() +
+      "&username=" + username;
   });
 
   $("#card-container").searcher({
@@ -70,11 +85,18 @@ function renderCards(Products) {
   });
 }
 
+
 $(document).ready(function () {
 
-  $("#welcome-msg").html("Welcome ")
+  let username = redirectToLogin();
 
-  renderCards(PRODUCTS);
+  $("#welcome-msg").html("Welcome " + username);
+
+  renderCards(PRODUCTS, username);
+
+  $("#logout").on("click", function () {
+    logout();
+  })
 
   $("#selector").on("change", function (event) {
     console.log(event.currentTarget.value);
@@ -93,6 +115,6 @@ $(document).ready(function () {
     } else if (event.currentTarget.value === "ALL_PRODUCTS") {
       final_products = PRODUCTS;
     }
-    renderCards(final_products);
+    renderCards(final_products, username);
   });
 });

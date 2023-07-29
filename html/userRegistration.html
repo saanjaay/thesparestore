@@ -8,9 +8,17 @@
     <script src="../js/userRegisteration.js"></script>
 </head>
 <body>
+    <div class="top-bar">
+        <img src="../media/logo.svg" />
+        <ul>
+          <li id="welcome-msg"></li>
+          <!-- <li title="user registration"><a>Register</a></li> -->
+          <li title="Home"><a href="home.html">Home</a></li>
+        </ul>
+      </div>
     <form class="form-class" id="user-form" action="form.php" method="POST">
 
-        <h2 class="form-label-class" >Login</h2>
+        <h2 class="form-label-class" >User registration</h2>
 
         <label class="form-label-class" for="firstname">First Name:</label>
         <input class="form-input" type="text" id="firstname" name="firstname" required><br>
