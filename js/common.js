@@ -1,3 +1,5 @@
+let userDetails = null;
+
 function getUrlVars() {
   var vars = {},
     hash;
@@ -33,24 +35,22 @@ function logout() {
 
 $(document).ready(function () {
   $("#welcome-msg").on("click", function () {
-    console.log("Edit details ");
+    // console.log("Edit details ");
     let email = getCookie("user_email").replace("%40", "@");
-    let userDetails;
-    fetch("../html.userDetails.php", {
-      method: "POST",
+
+    fetch("../html/userDetails.php?email=" + email, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json", // type
       },
-      body: JSON.stringify({ email: email }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        localStorage.setItem("userDetails",JSON.stringify(data));
+        window.location.href = "../html/userDetails.html";
       })
       .catch((error) => {
         console.error(error);
       });
-    console.log(userDetails);
   });
 });
-

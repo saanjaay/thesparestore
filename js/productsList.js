@@ -75,10 +75,6 @@ $(document).ready(function () {
 
   $("#welcome-msg").html("Welcome " + username);
 
-  $("#welcome-msg").on("click", function () {
-    location.href = "../html/userDetails.php";
-  });
-
   renderCards(PRODUCTS, username);
 
   $("#logout").on("click", function () {

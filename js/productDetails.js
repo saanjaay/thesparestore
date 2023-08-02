@@ -3,10 +3,6 @@ $(function () {
 
   $("#welcome-msg").html("Welcome " + username);
 
-  $("#welcome-msg").on("click", function () {
-    location.href = "../html/userDetails.php";
-  });
-
   $("#logout").on("click", function () {
     logout();
   });

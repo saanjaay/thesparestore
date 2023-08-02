@@ -35,7 +35,8 @@ $sql = "INSERT INTO customer_details_auth (first_name, last_name, email, phone, 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
     mysqli_close($conn);
-    header("Location: userLogin.html");
+    echo '<script type="text/javascript">alert("INFO:  User Created Successfully"); window.location.href = "userLogin.html";</script>';
+    // header("Location: userLogin.html");
     exit();
 } else {
     if (mysqli_errno($conn) == 1062) {
