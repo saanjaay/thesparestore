@@ -1,4 +1,5 @@
 $(document).ready(function(){
+   console.log()
     // valiadtion for Password
 $('#password').on('input', function () {
     var password = $(this).val();

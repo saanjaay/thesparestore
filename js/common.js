@@ -36,19 +36,6 @@ $(document).ready(function () {
     console.log("Edit details ");
     let email = getCookie("user_email").replace("%40", "@");
     let userDetails;
-    // $.ajax({
-    //   type: "POST",
-    //   url: "../html/userDetails.php",
-    //   dataType: "json",
-    //   data: { email: email },
-    //   success: function (res) {
-    //     if (!("error" in res)) {
-    //       userDetails = res.result;
-    //     } else {
-    //       console.log(res.error);
-    //     }
-    //   },
-    // });
     fetch("../html.userDetails.php", {
       method: "POST",
       headers: {
@@ -66,3 +53,4 @@ $(document).ready(function () {
     console.log(userDetails);
   });
 });
+

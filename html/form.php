@@ -24,7 +24,7 @@ $conn = mysqli_connect($host, $username, $pass, $dbname);
 // checking connection
 if (!$conn) {
     die("Connection failed!" . mysqli_connect_error());
-}else{
+} else {
     print_r("Connection established");
 }
 
@@ -34,14 +34,16 @@ $sql = "INSERT INTO customer_details_auth (first_name, last_name, email, phone, 
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
+    mysqli_close($conn);
+    header("Location: userLogin.html");
+    exit();
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    if (mysqli_errno($conn) == 1062) {
+        mysqli_close($conn);
+        echo '<script type="text/javascript">alert("INFO:  Duplicate email"); window.location.href = "userRegistration.html";</script>';
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        mysqli_close($conn);
+    }
 }
-
-print_r("end");
-mysqli_close($conn);
- 
-header("Location: userLogin.html");
-exit();
-
 ?>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="../css/support.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/support.js"></script>
+    <title>Support</title>
+  </head>
+
+  <body>
+    <div id="dialog" title="Contact form">
+      <p>
+        Thankyou for reaching support. Our support team will contact you shortly
+      </p>
+    </div>
+
+    <div class="top-bar">
+      <p class="logo" id="logo">The Spare Store</p>
+      <ul>
+        <li id="welcome-msg"></li>
+        <!-- <li title="user registration"><a>Register</a></li> -->
+        <li title="Home"><a href="home.html">Home</a></li>
+        <li title="support"><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+    <div class="faq">
+      <p id="faq">FAQs.</p>
+      <div class="search">
+        <input
+          type="text"
+          id="search"
+          onkeyup="search_faq()"
+          placeholder="Enter your question here"
+        />
+      </div>
+      <div class="heading">
+        <p>Got questions? Here are some answers that might help you out.</p>
+      </div>
+      <div class="question_answer">
+        <ul class="q_and_a_ists">
+          <li class="qanda">
+            <p id="question">How can I place an order?</p>
+            <p id="answer">
+              Placing an order is easy! Simply browse our website, select the
+              items you want to purchase, and add them to your shopping cart.
+              Once you're done, proceed to the checkout page and follow the
+              instructions to complete your order.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">What payment methods do you accept?</p>
+            <p id="answer">
+              We accept various payment methods, including credit/debit cards,
+              PayPal, and bank transfers. During the checkout process, you can
+              choose the payment method that suits you best.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">
+              Can I change or cancel my order after it has been placed?
+            </p>
+            <p id="answer">
+              We understand that circumstances may change. If you need to modify
+              or cancel your order, please contact our customer support team as
+              soon as possible. We'll do our best to accommodate your request if
+              the order hasn't been processed for shipment.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">How long does it take to process an order?</p>
+            <p id="answer">
+              Order processing typically takes 1-2 business days. During peak
+              seasons or promotional events, it may take slightly longer. Rest
+              assured, we work diligently to get your order ready for shipment
+              as quickly as possible.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">Can I track my order's shipment?</p>
+            <p id="answer">
+              Absolutely! Once your order is shipped, you will receive a
+              shipping confirmation email containing a tracking link. You can
+              use this link to monitor the progress of your package until it
+              reaches your doorstep.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">How long does shipping take?</p>
+            <p id="answer">
+              Shipping times depend on your location and the shipping method
+              selected during checkout. In general, domestic orders will arrive
+              within 3-7 business days, while international orders may take 7-21
+              business days to arrive.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">
+              What should I do if my package is lost or damaged during transit?
+            </p>
+            <p id="answer">
+              If your package is lost or damaged during transit, please contact
+              our customer support immediately. We will work with the shipping
+              carrier to resolve the issue and ensure you receive a replacement
+              or a refund, as applicable.
+            </p>
+          </li>
+          <li class="qanda">
+            <p id="question">
+              What happens if I'm not at home when my package is delivered?
+            </p>
+            <p id="answer">
+              If you're not available at the time of delivery, the shipping
+              carrier will typically leave a delivery notification or attempt
+              delivery on another day. You may also be able to arrange a pickup
+              from a local courier center depending on the carrier's policies.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="heading">
+      <p>Still facing issue? Reach us by filling out the form below.</p>
+    </div>
+    <div class="faq_form">
+      <form id="form" autocomplete="off">
+        <div class="form_element1">
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+        <div class="form_element2">
+          <input
+            type="tel"
+            name="mobile"
+            id="mobile"
+            placeholder="Contact Number"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email ID"
+            required
+          />
+        </div>
+        <div class="form_element3">
+          <select name="issue_type" id="issue_type" required>
+            <option value="" disabled selected hidden>
+              Select Your Issue Type
+            </option>
+            <option value="Payment Issues">Payment Issues</option>
+            <option value="Order Status Inquiry">Order Status Inquiry</option>
+            <option value="Cancellation and Modification of orders">
+              Cancellation and Modification Requests
+            </option>
+            <option value="Incomplete or Missing Orders">
+              Incomplete or Missing Orders
+            </option>
+            <option value="Shipping and Delivery">Shipping and Delivery</option>
+            <option value="Promotions and Discounts">
+              Promotions and Discounts
+            </option>
+            <option value="Out of Stock Items">Out of Stock Items</option>
+          </select>
+          <textarea
+            name="issue_description"
+            id="issue_description"
+            placeholder="Describe your issue!"
+            required
+          ></textarea>
+        </div>
+        <div class="faq_form_button">
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <footer>
+    <h5>
+      Our services are available on Monday to Friday from 10:00 AM to 08:00 PM
+      (EDT).
+    </h5>
+    <h6>&copy; 2023 The Spare Store & Inc.</h6>
+  </footer>
+</html>
