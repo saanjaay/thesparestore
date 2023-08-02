@@ -1,17 +1,3 @@
-
-
-function redirectToLogin(){
-  let username = getUrlVars()["username"];
-  if (username === null || username === undefined){
-    location.href = "../html/userLogin.html";
-  }
-  return username;
-}
-
-function logout(){
-  window.location.href = location.href.split("?")[0]
-}
-
 function renderCards(Products, username) {
   $("#card-container").empty();
 
@@ -70,8 +56,7 @@ function renderCards(Products, username) {
       "?id=" +
       e.currentTarget.id +
       "&type=" +
-      $("#selector").val() +
-      "&username=" + username;
+      $("#selector").val();
   });
 
   $("#card-container").searcher({
@@ -85,18 +70,20 @@ function renderCards(Products, username) {
   });
 }
 
-
 $(document).ready(function () {
-
   let username = redirectToLogin();
 
   $("#welcome-msg").html("Welcome " + username);
+
+  $("#welcome-msg").on("click", function () {
+    location.href = "../html/userDetails.php";
+  });
 
   renderCards(PRODUCTS, username);
 
   $("#logout").on("click", function () {
     logout();
-  })
+  });
 
   $("#selector").on("change", function (event) {
     console.log(event.currentTarget.value);

@@ -1,17 +1,17 @@
-
-
 $(function () {
-
   let username = redirectToLogin();
 
   $("#welcome-msg").html("Welcome " + username);
 
+  $("#welcome-msg").on("click", function () {
+    location.href = "../html/userDetails.php";
+  });
+
   $("#logout").on("click", function () {
     logout();
-  })
+  });
 
-  $("#goto-productsList").attr('href', 'productsList.html?username='+username);
-
+  $("#goto-productsList").attr("href", "productsList.html");
 
   let id = getUrlVars()["id"] - 1;
   let type = getUrlVars()["type"];

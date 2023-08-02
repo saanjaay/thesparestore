@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input from the form
@@ -30,10 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // Redirect to product list page
         $username = $row['first_name'];
+        setcookie("user_name", $username, time()+1000*365*24*60*60);
+        setcookie("user_email", $email);
         header("Location:./productsList.html?username=$username");
         exit();
     }else{
         header("Location:./userLogin.html?login=invalid");
+        setcookie("user_name", "undefined", time()-10);
+        setcookie("user_email", "undefined", time()-10);
         exit();
     }
 }
