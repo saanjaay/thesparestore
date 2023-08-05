@@ -1,3 +1,9 @@
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+
 $(document).ready(function () {
   $("#dialog").dialog({
     autoOpen: false,

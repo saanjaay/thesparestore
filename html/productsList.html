@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Author: Tanej (C0882384),
+    Author: Sanjay (C0886438),
+    Author: Tharun (C0886441) -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +10,8 @@
     <title>Product List</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/productsList.css" />
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-   <script src="../js/common.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
@@ -24,23 +27,23 @@
     <div class="top-bar">
       <p class="logo" id="logo">The Spare Store</p>
       <ul>
-        <li id="welcome-msg" style="text-transform: capitalize;"></li>
+        <li id="welcome-msg" style="text-transform: capitalize"></li>
         <!-- <li title="user registration"><a>Register</a></li> -->
         <li title="products"><a>Products</a></li>
         <li title="support"><a href="support.html">Support</a></li>
         <li title="logout" id="logout">Logout</li>
       </ul>
     </div>
-    <div id="welcome" >Welcome to your one stop car shop!</div>
+    <p id="welcome">Welcome to your one stop car shop!</p>
     <div class="search-container">
-      <input type="text" placeholder="Search" id="search-text">
+      <input type="text" placeholder="Search" id="search-text" />
       <select id="selector">
         <option value="ALL_PRODUCTS">All Products</option>
         <option value="BATTERY">Battery</option>
-        <option value="BRAKES">Brakes</option>TIRES
+        <option value="BRAKES">Brakes</option>
         <option value="HEADLIGHT">HeadLights & LED</option>
-        <option value="TIRES">Tires</option>"
-        <option value="WHEELS">Wheels</option>"
+        <option value="TIRES">Tires</option>
+        <option value="WHEELS">Wheels</option>
       </select>
     </div>
     <div class="card-container" id="card-container"></div>

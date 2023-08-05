@@ -1,10 +1,18 @@
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+
 function renderCards(Products, username) {
   $("#card-container").empty();
 
-  $(function() {
-      setTimeout(function() { $("#welcome").slideToggle("fast") }, 2000)
-      sessionStorage.setItem('popState','shown')
-      })
+  $(function () {
+    setTimeout(function () {
+      $("#welcome").slideToggle("fast");
+    }, 2000);
+    sessionStorage.setItem("popState", "shown");
+  });
   Products.map((product, i) => {
     const id = i + 1;
     $("#card-container").append(

@@ -1,3 +1,9 @@
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+
 .card-container {
   grid-template-columns: auto auto auto auto;
   display: grid;
@@ -71,7 +77,7 @@
   margin: 0 5px;
 }
 
-.rating-container{
+.rating-container {
   display: flex;
   align-items: center;
 }
@@ -80,11 +86,8 @@ h2 {
   text-align: start;
 }
 
-#welcome
-{
-     background:grey;
-     opacity: 2;
-     color:#fff;
-     padding:10px; 
-     text-align:center;
-    }
+#welcome {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}

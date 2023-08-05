@@ -1,3 +1,9 @@
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+
 function search_faq() {
   let look_out = document.getElementById("search").value;
   look_out = look_out.toLowerCase();

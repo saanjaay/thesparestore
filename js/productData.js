@@ -1,5 +1,9 @@
-
-// containts the list of all the products and its details 
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+// containts the list of all the products and its details
 
 const PRODUCTS = [
   {

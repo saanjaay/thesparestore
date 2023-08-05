@@ -1,3 +1,9 @@
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+
 $(document).ready(function () {
   let username = redirectToLogin();
 
@@ -74,7 +80,7 @@ $(document).ready(function () {
     } else if (password !== "" && cpassword !== password) {
       $(".cpassword-msg").addClass("invalid-msg").text("must be matched");
       $(this).addClass("invalid-input").removeClass("valid-input");
-    }else{
+    } else {
       $(this).removeClass("invalid-input");
       $(".cpassword-msg").addClass("invalid-msg").text("");
     }

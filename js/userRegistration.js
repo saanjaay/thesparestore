@@ -1,3 +1,9 @@
+/**
+ * @author Tanej (C0882384),
+ * @author Sanjay (C0886438),
+ * @author Tharun (C0886441)
+ */
+
 $(document).ready(function () {
   $("#dialog").dialog({
     autoOpen: false,
@@ -38,8 +44,7 @@ $(document).ready(function () {
         .addClass("invalid-msg")
         .text("At least one special character");
       $(this).addClass("invalid-input").removeClass("valid-input");
-    }
-    else if (!minEightPassword.test(password)) {
+    } else if (!minEightPassword.test(password)) {
       $(".password-msg").addClass("invalid-msg").text("Minimum length 8");
       $(this).addClass("invalid-input").removeClass("valid-input");
     } else if (cpassword.length > 0) {

@@ -1,3 +1,6 @@
+<!-- Author: Tanej (C0882384),
+    Author: Sanjay (C0886438),
+    Author: Tharun (C0886441) -->
 <?php
 session_start();
 // Check if the form is submitted
@@ -21,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare the SQL query to check the username and password
-    $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '".hash('md5', '$password')."'";
+    $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '" . hash('md5', '$password') . "'";
     $result = $conn->query($sql);
     $row = $result->fetch_array();
     print_r($result->num_rows);
@@ -30,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // Redirect to product list page
         $username = $row['first_name'];
-        setcookie("user_name", $username, time()+1000*365*24*60*60);
+        setcookie("user_name", $username, time() + 1000 * 365 * 24 * 60 * 60);
         setcookie("user_email", $email);
         header("Location:./productsList.html?username=$username");
         exit();
-    }else{
+    } else {
         header("Location:./userLogin.html?login=invalid");
-        setcookie("user_name", "undefined", time()-10);
-        setcookie("user_email", "undefined", time()-10);
+        setcookie("user_name", "undefined", time() - 10);
+        setcookie("user_email", "undefined", time() - 10);
         exit();
     }
 }
