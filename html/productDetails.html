@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Details</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/productDetails.css" />
-    <link rel="stylesheet" href="../css/productsList.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="../js/common.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-    <script src="../js/jquery.searcher.js"></script>
-    <script type="text/javascript" src="../js/productData.js"></script>
-    <script type="text/javascript" src="../js/productsList.js"></script>
-    <script type="text/javascript" src="../js/productDetails.js"></script>
-  </head>
-  <body>
-    <div class="top-bar">
-      <p class="logo" id="logo">The Spare Store</p>
-      <ul>
-        <li id="welcome-msg"></li>
-        <!-- <li title="user registration"><a>Register</a></li> -->
-        <li title="products"><a id="goto-productsList" href="productsList.html">Products</a></li>
-        <li title="support"><a href="support.html">Support</a></li>
-        <li title="logout" id="logout">Logout</li>
-      </ul>
-    </div>
-    <div class="container">
-      <div class="product-container">
-        <div class="img-container">
-          <img class="img" id="product-image" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/productDetails.css" />
+  <link rel="stylesheet" href="../css/productsList.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="../js/common.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  <script src="../js/jquery.searcher.js"></script>
+  <script type="text/javascript" src="../js/productData.js"></script>
+  <script type="text/javascript" src="../js/productsList.js"></script>
+  <script type="text/javascript" src="../js/productDetails.js"></script>
+</head>
+
+<body>
+  <div class="top-bar">
+    <p class="logo" id="logo">The Spare Store</p>
+    <ul>
+      <li id="welcome-msg"></li>
+      
+      <li title="products"><a id="goto-productsList" href="productsList.html">Products</a></li>
+      <li title="support"><a href="support.html">Support</a></li>
+      <li title="logout" id="logout">Logout</li>
+    </ul>
+  </div>
+   <div class="container">  <!--renders the data in the product data within the container -->
+    <div class="product-container">
+      <div class="img-container">
+        <img class="img" id="product-image" />
+      </div>
+      <div class="product-details">
+        <h2 class="title" id="product-title">Title</h2>
+        <h3 class="brand-name" id="product-brand">Company Name</h3>
+        <div class="rating-container">
+          <div id="product-rating">rating</div>
+          <p id="product-review-count">(32)</p>
         </div>
-        <div class="product-details">
-          <h2 class="title" id="product-title">Title</h2>
-          <h3 class="brand-name" id="product-brand">Company Name</h3>
-          <div class="rating-container">
-            <div id="product-rating">rating</div>
-            <p id="product-review-count">(32)</p>
-          </div>
-          <p class="desc" id="product-descriptino">Description:</p>
-          <ul id="product-desc"></ul>
-          <h2 class="price" id="product-price">Price</h2>
-          <div class="quantity-container"> 
-            <p id="product-count"></p>
-            <span>-</span>
-            <p id="product-available"></p> 
-          </div>
-          <p class="warranty" id="product-warranty">warranty info</p>
+        <p class="desc" id="product-descriptino">Description:</p>
+        <ul id="product-desc"></ul>
+        <h2 class="price" id="product-price">Price</h2>
+        <div class="quantity-container">
+          <p id="product-count"></p>
+          <span>-</span>
+          <p id="product-available"></p>
         </div>
+        <p class="warranty" id="product-warranty">warranty info</p>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
