@@ -57,15 +57,18 @@ if ($custom_action === "" || $custom_action === "insert") {
     $row = $result->fetch_assoc();
     $final_password = $row['password'];
     if ($oldPassword !== "") {
-        $sql = "SELECT password FROM customer_details_auth WHERE email = '$email' ";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        // $sql = "SELECT password FROM customer_details_auth WHERE email = '$email' ";
+        // $stmt = $conn->prepare($sql);
+        // $stmt->execute();
+        // $result = $stmt->get_result();
+
         if ($final_password === hash("md5", $oldPassword)) {
             $sql = "UPDATE  customer_details_auth set first_name = '$firstname', last_name = '$lastname', phone = '$phone', dob = '$dob', address = '$address', pin = '$pin', password = '" . hash('md5', $password) . "' WHERE email = '$email'";
             $final_password = $password;
         } else {
+            setcookie("user_name", $username, time() + 1000 * 365 * 24 * 60 * 60);
             echo '<script type="text/javascript">alert("ERR:  Invalid Old Password"); window.location.href = "userDetails.html";</script>';
+            exit();
         }
     } else {
         $sql = "UPDATE customer_details_auth set first_name = '$firstname', last_name = '$lastname', phone = '$phone', dob = '$dob', address = '$address', pin = '$pin' WHERE email = '$email'";
@@ -82,7 +85,7 @@ if ($custom_action === "" || $custom_action === "insert") {
     } else {
         print_r(mysqli_error($conn));
     }
-    print_r($sql);
+    // print_r($sql);
     //print_r($_POST);
 }
 ?>
