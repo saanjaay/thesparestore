@@ -46,7 +46,7 @@ $(document).ready(function () {
     fetch("../html/userDetails.php?email=" + email, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json", // type
+        "Content-Type": "application/json",
       },
     })
       .then((response) => response.json())

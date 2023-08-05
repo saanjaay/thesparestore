@@ -1,6 +1,3 @@
-<!-- Author: Tanej (C0882384),
-    Author: Sanjay (C0886438),
-    Author: Tharun (C0886441) -->
 <?php
 header('Content-Type: application/json; charset=utf-8');
 // database details

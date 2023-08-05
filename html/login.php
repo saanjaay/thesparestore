@@ -1,6 +1,3 @@
-<!-- Author: Tanej (C0882384),
-    Author: Sanjay (C0886438),
-    Author: Tharun (C0886441) -->
 <?php
 session_start();
 // Check if the form is submitted
