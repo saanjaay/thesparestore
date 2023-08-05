@@ -1,3 +1,6 @@
+
+// containts the list of all the products and its details 
+
 const PRODUCTS = [
   {
     url: "/en/pdp/motomaster-oeplus-group-size-35-battery-640-cca-0103585p.html?loc=plp",

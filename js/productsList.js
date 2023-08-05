@@ -1,6 +1,10 @@
 function renderCards(Products, username) {
   $("#card-container").empty();
 
+  $(function() {
+      setTimeout(function() { $("#welcome").slideToggle("fast") }, 2000)
+      sessionStorage.setItem('popState','shown')
+      })
   Products.map((product, i) => {
     const id = i + 1;
     $("#card-container").append(
