@@ -21,12 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare the SQL query to check the username and password
-    $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '" . hash('md5', '$password') . "'";
+    $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '" . hash('md5', $password) . "'";
+    print_r($sql);
     $result = $conn->query($sql);
     $row = $result->fetch_array();
     print_r($result->num_rows);
     $conn->close();
-    // Check for successful login
+    // // Check for successful login
     if ($result->num_rows == 1) {
         // Redirect to product list page
         $username = $row['first_name'];

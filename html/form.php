@@ -33,7 +33,7 @@ if (!$conn) {
 if ($custom_action === "" || $custom_action === "insert") {
     // // using sql to create a data entry query
     $sql = "INSERT INTO customer_details_auth (first_name, last_name, email, phone, dob, address, pin, password)
-    VALUES ('$firstname', '$lastname', '$email','$phone','$dob', '$address','$pin', '" . hash('md5', '$password') . "')";
+    VALUES ('$firstname', '$lastname', '$email','$phone','$dob', '$address','$pin', '" . hash('md5', $password) . "')";
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
         mysqli_close($conn);
@@ -62,7 +62,7 @@ if ($custom_action === "" || $custom_action === "insert") {
         $stmt->execute();
         $result = $stmt->get_result();
         if ($final_password === hash("md5", $oldPassword)) {
-            $sql = "UPDATE  customer_details_auth set first_name = '$firstname', last_name = '$lastname', phone = '$phone', dob = '$dob', address = '$address', pin = '$pin', password = '" . hash('md5', '$password') . "' WHERE email = '$email'";
+            $sql = "UPDATE  customer_details_auth set first_name = '$firstname', last_name = '$lastname', phone = '$phone', dob = '$dob', address = '$address', pin = '$pin', password = '" . hash('md5', $password) . "' WHERE email = '$email'";
             $final_password = hash("md5", $oldPassword);
         } else {
             echo '<script type="text/javascript">alert("ERR:  Invalid Old Password"); window.location.href = "userDetails.html";</script>';
