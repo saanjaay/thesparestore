@@ -63,7 +63,7 @@ if ($custom_action === "" || $custom_action === "insert") {
         $result = $stmt->get_result();
         if ($final_password === hash("md5", $oldPassword)) {
             $sql = "UPDATE  customer_details_auth set first_name = '$firstname', last_name = '$lastname', phone = '$phone', dob = '$dob', address = '$address', pin = '$pin', password = '" . hash('md5', $password) . "' WHERE email = '$email'";
-            $final_password = hash("md5", $oldPassword);
+            $final_password = $password;
         } else {
             echo '<script type="text/javascript">alert("ERR:  Invalid Old Password"); window.location.href = "userDetails.html";</script>';
         }
