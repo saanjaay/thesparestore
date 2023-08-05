@@ -52,6 +52,20 @@ $(function () {
   filtered_products[id].featureBullets?.map((feature) => {
     desc.append(`<li>${feature.description}</li>`);
   });
+
+  $("#dialog").dialog({
+    autoOpen: false,
+    modal: true,
+    show: "blind",
+    hide: "blind",
+  });
+  $("#dialog-text").html(
+    "Thanks for buying this product. Your order will deliver soon."
+  );
+
+  $("#buy-btn").click(() => {
+    $("#dialog").dialog("open");
+  });
 });
 
 function goToProductList() {

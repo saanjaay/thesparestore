@@ -13,7 +13,6 @@ function getUrlVars() {
   return vars;
 }
 
-// https://stackoverflow.com/questions/10730362/get-cookie-by-name
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -46,7 +45,7 @@ $(document).ready(function () {
     })
       .then((response) => response.json())
       .then((data) => {
-        localStorage.setItem("userDetails",JSON.stringify(data));
+        localStorage.setItem("userDetails", JSON.stringify(data));
         window.location.href = "../html/userDetails.html";
       })
       .catch((error) => {
@@ -54,3 +53,11 @@ $(document).ready(function () {
       });
   });
 });
+
+function ResetURL() {
+  window.history.replaceState(
+    {},
+    document.title,
+    window.location.href.split("?")[0]
+  );
+}

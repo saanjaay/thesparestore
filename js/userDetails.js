@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  let username = redirectToLogin();
+
+  $("#welcome-msg").html("Welcome " + username);
+
+  $("#logout").on("click", function () {
+    logout();
+  });
   // valiadtion for Password
   const userDetails = JSON.parse(localStorage.getItem("userDetails"));
   console.log(userDetails);
@@ -18,8 +25,10 @@ $(document).ready(function () {
     var digitPassword = /(?=.*?[0-9])/;
     var symbolPassword = /(?=.*?[#?!@$%^&*-])/;
     var minEightPassword = /.{8,}/;
-    if (password.length == 0) {
-      $(".password-msg").addClass("invalid-msg").text("Password is required");
+    if ($("#old_password").val() === "") {
+      $(".password-msg")
+        .addClass("invalid-msg")
+        .text("Old password is required");
       $(this).addClass("invalid-input").removeClass("valid-input");
     } else if (!uppercasePassword.test(password)) {
       $(".password-msg").addClass("invalid-msg").text("At least one Uppercase");
@@ -35,12 +44,7 @@ $(document).ready(function () {
         .addClass("invalid-msg")
         .text("At least one special character");
       $(this).addClass("invalid-input").removeClass("valid-input");
-    }
-    //  else if (spacesPassword.test(password)) {
-    //     $('.password-msg').addClass('invalid-msg').text('Whitespaces are not allowed');
-    //     $(this).addClass('invalid-input').removeClass('valid-input');
-    //  }
-    else if (!minEightPassword.test(password)) {
+    } else if (!minEightPassword.test(password)) {
       $(".password-msg").addClass("invalid-msg").text("Minimum length 8");
       $(this).addClass("invalid-input").removeClass("valid-input");
     } else if (cpassword.length > 0) {
@@ -59,20 +63,41 @@ $(document).ready(function () {
     }
   });
   // valiadtion for confirmation of  password
+
   $("#cpassword").on("input", function () {
     var password = $("#password").val();
     var cpassword = $(this).val();
-    if (cpassword.length == 0) {
-      $(".cpassword-msg")
-        .addClass("invalid-msg")
-        .text("Confirm password is required");
+
+    if (password === "" && cpassword.length !== 0) {
+      $(".cpassword-msg").addClass("invalid-msg").text("password is required");
       $(this).addClass("invalid-input").removeClass("valid-input");
-    } else if (cpassword != password) {
+    } else if (password !== "" && cpassword !== password) {
       $(".cpassword-msg").addClass("invalid-msg").text("must be matched");
       $(this).addClass("invalid-input").removeClass("valid-input");
-    } else {
-      $(".cpassword-msg").empty();
-      $(this).addClass("valid-input").removeClass("invalid-input");
+    }else{
+      $(this).removeClass("invalid-input");
+      $(".cpassword-msg").addClass("invalid-msg").text("");
     }
+  });
+
+  $("#user-form").submit(function () {
+    let old_password = $("#old_password").val().trim();
+    let new_password = $("#password").val().trim();
+    let confirm_new_password = $("#cpassword").val().trim();
+    if (new_password !== "") {
+      if (
+        old_password !== "" &&
+        confirm_new_password !== "" &&
+        new_password === confirm_new_password
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      $("#old_password").val("");
+      return true;
+    }
+    return false;
   });
 });

@@ -16,14 +16,6 @@ if (!$conn) {
 $email = $_GET['email'];
 
 $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' ";
-// $result = mysqli_query($con, $sql);
-// $row = mysqli_fetch_assoc($result);
-// echo $row;
-// echo json_encode(['status' => -1, 'message' => "Bad request", "data" => $row]);
-// header("Location: productsList.html");
-// print_r($result);
-// print_r($_COOKIE["user_email"]);
-// $con->close();
 if ($stmt = $conn->prepare($sql)) {
     // Get the user ID from the JavaScript request
     $stmt->execute();

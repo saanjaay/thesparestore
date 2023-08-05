@@ -1,7 +1,21 @@
-$(document).ready(function() {
-    let urlValues = getUrlVars()["login"];
-    console.log(urlValues);
-    if (urlValues && urlValues === "invalid"){
-        alert("Invalid username or password");
-    }
+$(document).ready(function () {
+  $("#dialog").dialog({
+    autoOpen: false,
+    modal: true,
+    show: "blind",
+    hide: "blind",
+  });
+  let urlValues = getUrlVars()["login"];
+  if (urlValues && urlValues === "invalid") {
+    $("#dialog-text").html("Invalid username or password");
+    ResetURL();
+  } else if (urlValues && urlValues === "created") {
+    $("#dialog-text").html("User created successfully");
+    ResetURL();
+  } else {
+    ResetURL();
+    return;
+  }
+
+  $("#dialog").dialog("open");
 });

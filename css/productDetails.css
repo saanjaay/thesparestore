@@ -2,6 +2,10 @@
   margin: 15px 0;
 }
 
+.container {
+  display: flex;
+}
+
 .btn {
   padding: 10px;
   border-radius: 5px;
@@ -17,24 +21,27 @@
 }
 
 .product-container {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  width: 100%;
 }
 
 .img-container {
   padding: 10px;
-  width: 80%;
+  width: 50%;
   margin: auto;
   display: flex;
 }
 
 .img {
-  width: 100%;
+  width: 80%;
   height: auto;
+  margin: auto;
+  object-fit: cover;
 }
 
 .product-details {
   padding: 10px;
+  width: 50%;
 }
 
 .rating-container {
@@ -56,4 +63,19 @@ a {
   text-decoration: none;
   color: white;
   cursor: pointer;
+}
+
+#buy-btn {
+  background-color: royalblue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100px;
+  border: none;
+  outline: none;
+}
+
+#buy-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

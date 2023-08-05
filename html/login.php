@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare the SQL query to check the username and password
-    $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '$password'";
+    $sql = "SELECT * FROM customer_details_auth WHERE email = '$email' AND password = '".hash('md5', '$password')."'";
     $result = $conn->query($sql);
     $row = $result->fetch_array();
     print_r($result->num_rows);
