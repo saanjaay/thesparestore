@@ -2,6 +2,9 @@
 
 # frontend-project
 The website that sells stock photography
+Home page :
 ![image](https://github.com/saanjaay/thesparestore/assets/37891737/b25d7a08-1d4e-4eac-8c2a-9e8dbb4f1102)
 
-![image](https://github.com/saanjaay/thesparestore/assets/37891737/9136492f-1adc-40ca-a911-ead85383c650)
+Showcase :
+![image](https://github.com/saanjaay/thesparestore/assets/37891737/817e1a85-7854-4972-8bb1-3f7883e76271)
+
